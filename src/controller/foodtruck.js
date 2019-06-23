@@ -75,8 +75,34 @@ api.delete('/:id', (req, res) => {
 });
 
 
+// add review for a specific food truck id
+// '/v1/foodtruck/reviews/add/:id'
+api.post('/reviews/add/:id', (req, res)=>{
+  FoodTruck.findById(req.params.id, (err, foodtruck)=>{
+    if(err){
+      res.send(err);
+    }
+    let newReview = new Review();
+
+    newReview.title = req.body.title;
+    newReview.text = req.body.text;
+    newReview.foodtruck = foodtruck._id
+    newReview.save(err, review) =>{
+      if(err){
+        res.send(err);
+      }
+      foodtruck.reviews.push(newReview);
+      foodtruck.save(err => {
+        if(err){
+          res.send(err);
+        }
+        res.json({message: 'Food truck review saved!'});
+      });
+    });
 
 
+  });
+});
 
 
 

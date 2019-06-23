@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 
 import {Router} from 'express';
 import foodtruck from '../model.foodtruck';
-
+import Review from '../model/review';
 
 export default({config, db}) => {
   let api = Router();

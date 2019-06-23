@@ -54,6 +54,8 @@ api.put('/:id', (req, res)=>{
       res.send(err);
     }
     foodtruck.name = req.body.name;
+    foodtruck.avgCost = req.body.avgCost;
+    foodtruck.geometry = req.body.geometry;
     foodtruck.save(err =>{
       if(err){
         res.send(err);

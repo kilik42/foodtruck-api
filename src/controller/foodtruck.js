@@ -15,7 +15,7 @@ export default({config, db}) => {
     newFoodTruck.name = request.body.name;
     newFoodTruck.foodtype = req.body.foodtype;
     newFoodTruck.avgcost = req.body.avgcost;
-    newFoodTruck.geometry.coordinates = req.ody.geometry.coordinates;
+    newFoodTruck.geometry.coordinates = req.body.geometry.coordinates;
 
     newFoodTruck.save(err => {
       if(err){

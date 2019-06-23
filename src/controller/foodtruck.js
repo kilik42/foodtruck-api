@@ -12,8 +12,10 @@ export default({config, db}) => {
   //'/v1/foodtruck/add' - create
   api.post('./add', (req, res){
     let newFoodTruck = new FoodTruck();
-
     newFoodTruck.name = request.body.name;
+    newFoodTruck.foodtype = req.body.foodtype;
+    newFoodTruck.avgcost = req.body.avgcost;
+    newFoodTruck.geometry.coordinates = req.ody.geometry.coordinates;
 
     newFoodTruck.save(err => {
       if(err){

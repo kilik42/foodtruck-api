@@ -11,11 +11,11 @@ export default({config, db}) => {
 
   //'/v1/foodtruck/add' - create
   api.post('./add', (req, res){
-    let newRest = new FoodTruck();
+    let newFoodTruck = new FoodTruck();
 
-    newRest.name = request.body.name;
+    newFoodTruck.name = request.body.name;
 
-    newRest.save(err => {
+    newFoodTruck.save(err => {
       if(err){
         res.send(err);
       }

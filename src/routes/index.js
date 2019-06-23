@@ -2,7 +2,7 @@ import express fro 'express';
 import config from '../config';
 import middleware from '../middleware';
 import initializeDb from '../db';
-import restaurant from '../controller/foodtruck';
+import foodtruck from '../controller/foodtruck';
 
 
 

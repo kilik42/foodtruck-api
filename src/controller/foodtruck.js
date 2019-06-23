@@ -107,6 +107,17 @@ api.post('/reviews/add/:id', (req, res)=>{
 });
 
 
+// get reviews for a specific food truck id
+// '/v1/foodtruck/reviews/:id'
+app.get ('/reviews/:id', (req, res)=>{
+  Review.find({foodtruck: req.params.id}, (err, review)=> {
+    if(err){
+       res.send(err);
+    }
+    res.json(reviews);
+  });
+});
+
 
   return api;
 }

@@ -14,8 +14,11 @@ let FoodtruckSchema = new Schema({
   avgCost: Number,
   geometry: {
     type: {type: String, default: 'Point'},
-    
-  }
+    coordinates: [Number]
+
+  },
+
+  reviews: [{type: Schema.Types.ObjectId, ref: 'Review'}]
 });
 
 module.exports = mongoose.model('FoodTruck', FoodtruckSchema);

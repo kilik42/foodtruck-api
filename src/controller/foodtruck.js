@@ -1,8 +1,10 @@
 import mongoose from 'mongoose';
-
 import {Router} from 'express';
 import foodtruck from '../model.foodtruck';
 import Review from '../model/review';
+
+import{authenticate} from '../middleware/authMiddleware';
+
 
 export default({config, db}) => {
   let api = Router();
